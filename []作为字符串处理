@@ -1,0 +1,28 @@
+JSON转对象的时候如果某个key值内容为[]并且此key的类型为String的时候转成对象的话会成为如下结果：
+AppFunc(
+  super=com.jemcocloud.saas.service.base.entity.AppFunc@614f42e, 
+  application=null, 
+  name=成员管理, 
+  defaultFlag=1, 
+  operCode=C-HT-CYGL, 
+  defaultIcon=icon-chengyuanguanli, 
+  routerPath=/console/users, 
+  childs="[]", 
+  num=1, 
+  systemLevel=0
+ )
+
+如果要解决此问题需要在转化后的对象在调用appFunc.setChilds("[]")才可以，添加后效果如下：
+AppFunc(
+  super=com.jemcocloud.saas.service.base.entity.AppFunc@21c70a52, 
+  application=null, 
+  name=成员管理, 
+  defaultFlag=1, 
+  operCode=C-HT-CYGL, 
+  defaultIcon=icon-chengyuanguanli, 
+  routerPath=/console/users, 
+  childs=[], 
+  num=1, 
+  systemLevel=0
+)
+  
